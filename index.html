@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icons/Fondo low risk.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+
+<body id="body">
+<!-- ESTRUCTURA Nº1 HEADER / NAV -->
+<header id="header">
+
+<!-- Listado de navegación -->
+    <nav id="nav">
+      <a href="#index"><picture><img src="images/lowrisk_horinzontal.png" alt=""></picture></a>  
+      <ul>
+        <li><a href="pages/quienes_somos.html">Quienes somos</a></li>
+        <li><a href="pages/nuestros_servicios.html">Nuestros servicios</a></li>
+        <li><a href="pages/clientes.html">Clientes</a></li>
+        <li><a href="#formulario-container">Contáctenos</a></li>
+    </ul>
+    </nav>
+<!-- Botón de whatsapp-->
+    <a href="https://wa.me/541163735286?" class="whatsapp-button" target="_blank"> 
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
+
+
+</header>
+
+
+<!-- ESTRUCTURA Nº2 MAIN (contenido del sitio) -->
+<main id="main"> <!-- CONTENIDO DE TODO EL SITIO -->
+
+  <section class="flayer_presentacion">
+    <video autoplay muted loop class="background_video">
+      <source src="videos/video_camera_imou.mov" type="video/mp4">
+    </video>
+    <p class="overlay_text">Seguridad Sustentable</p>
+    <p class="overlay_subtext">para generar valor</p>
+    <p class="normal_overlay_text">Optimizamos recursos para minimizar riesgos</p>
+  </section>
+  
+<section class="lineas_main">
+    <img class="lineas_img" src="images/lineas.png" alt="lineas_main">
+</section>
+
+
+
+<!-- Textos de introducción -->
+<section id="quienes_somos"> 
+  <h1><a href="pages/quienes_somos.html">Quienes somos</a></h1>
+  <p><strong>LOW RISK</strong> es una empresa innovadora en el sector de la seguridad, cuyo pilar es el factor humano, integrada por profesionales altamente calificados que brinda servicios a empresas, organismos e instituciones públicas o privadas.</p>
+</section>
+
+<div class="container_nosotros">
+  <img class="iconos_nosotros" src="images/iconos.png">
+</div>
+
+<section id="nuestros_servicios">
+  <h1><a href="pages/nuestros_servicios.html">Nuestros servicios</a></h1>
+  <p>En <strong class="uppercase">Low Risk</strong>, ofrecemos soluciones integrales de seguridad electrónica, diseñadas para adaptarse a las necesidades específicas de cada cliente. Nuestro equipo de expertos utiliza tecnología avanzada para detectar y anticipar riesgos, asegurando una protección confiable. Desde el diseño y la instalación hasta el mantenimiento y la auditoría de sistemas, garantizamos una respuesta rápida ante emergencias y una supervisión continua a través de nuestros centros de control. Confía en nosotros para salvaguardar lo que más valoras.</p>
+</section>
+
+<div class="container">
+  <img class="iconos" src="images/nuestros_servicios.png" alt="Icono de Servicios">
+</div>
+
+<section id="Clientes">
+  <h1><a href="pages/clientes.html">Clientes</a></h1>
+  <p>Trabajamos estrechamente con cada cliente para entender sus necesidades específicas, garantizando así una protección robusta y confiable. Nuestra reputación se basa en la confianza y el compromiso de brindar un servicio excepcional, haciendo de <strong class="uppercase">Low Risk</strong> la elección preferida en el sector de la seguridad electrónica.</p>
+</section>
+
+<div class="container_clientes">
+  <img class="iconos_clientes" src="images/iconos_clientes.png">
+</div>
+
+<!-- Titulo de presentación footer -->
+
+<section class="lineas_footer">
+      <img class="lineas_footer_img" src="images/lineas.png" alt="lineas_decorativas" id="lineas"> <!-- Líneas de decoración -->
+</section>
+
+<section class="footer"> 
+  <div class="video-background">
+    <video autoplay muted loop>
+      <source src="videos/fondo_para_formulario5.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div> 
+  </div>
+
+
+  <!-- Contenedor para el contenido del footer -->
+  <div class="footer-content"> 
+    <h3>Contacta con nosotros</h3> 
+    <p>Conocé más sobre nuestras soluciones enviándonos un email a <a class="mail" href="mailto:info@lowriskgroup.com.ar">info@lowriskgroup.com.ar</a> y recibirás asesoramiento de nuestro equipo.</p>
+    <p>También podés completar el siguiente formulario.</p>
+
+    <!-- Formulario -->
+    <form id="formulario-container" action="send_email.php" method="POST">
+      <label for="nombre">Nombre y apellido</label> 
+      <input type="text" id="name" name="nombre" placeholder="Ingresa tu nombre" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Ingresa tu email" required>
+
+      <label for="phone">Teléfono</label>
+      <input type="number" name="telefono" id="phone" placeholder="+54 1234567890" required>
+
+      <label for="comentario">Comentario o consulta</label>
+      <textarea id="comentario" name="comentario" placeholder="Deja aquí tu comentario o consulta detallada" rows="5"></textarea>
+
+      <div class="button-container">
+        <img src="images/letras_solo.png" alt="Logo_de_la_Empresa" class="empresa-imagen">
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+</main>
+
+
+<!-- Links a las redes sociales -->
+<footer id="footer">
+
+  <section class="lineas_final">
+    <img class="lineas_final_img" src="images/lineas.png" alt="lineas_decorativas" id="lineas"> <!-- Líneas de decoración -->
+</section>
+
+<section id="final">
+  <section class="lista_final">
+    <ul>
+      <li><a href="pages/quienes_somos.html">Quienes somos</a></li>
+      <li><a href="pages/nuestros_servicios.html">Nuestros servicios</a></li>
+      <li><a href="pages/clientes.html">Clientes</a></li>
+      <li><a href="#formulario-container">Contáctenos</a></li>
+    </ul>
+  </section>
+
+<section id="red_social">
+    <p>Seguinos en </p>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/LowRiskSeguridad/" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/lowriskseguridad/" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://ar.linkedin.com/company/low-risk" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+</section>
+
+
+<section class="contact_info">
+  <div class="titulos_final">
+    <img class="logo_final" src="images/logo_alto.png" alt="logo_final">
+  </div>
+  <div class="tel_final">
+    <a href="tel:+541163735286"><i class="fas fa-phone"></i>+54 11 6373-5286</a>
+  </div>
+  <div class="contacto_final">
+    <a href="mailto:info@lowriskgroup.com.ar"><i class="fas fa-envelope"></i> info@lowriskgroup.com.ar</a>
+  </div>
+  <div class="direccion_final">
+    <a href="https://www.google.com/maps/search/?api=1&query=Aristóbulo+del+Valle+1556,+C1295ADH+Cdad.+Autónoma+de+Buenos+Aires" target="_blank">
+      <i class="fas fa-map-marker-alt"></i> Aristóbulo del Valle 1556
+    </a>
+  </div>
+</section>
+
+  <section class="mapa_final">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.7359538760943!2d-58.37594672521093!3d-34.636112359208056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb4a94ea5e53%3A0x38d93cc34f3cee4f!2sArist%C3%B3bulo%20del%20Valle%201556%2C%20C1295ADH%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1728571079543!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+</section>
+
+<section class="article">
+  <h6>2024 © Low Risk Group S.R.L - Todos los derechos reservados</h6>
+  <h6>Santiago Peña - Departament of innovation and development</h6>
+</section>
+
+</footer>
+</body>
+</html>
+

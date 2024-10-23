@@ -1,0 +1,774 @@
+                                          /* Header General */
+
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
+    background-color: #f0f0f0; 
+}
+
+header {
+    background-color: #ffffff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    padding: 10px 20px; 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10; 
+
+}
+
+
+#nav {
+    display: flex; 
+    justify-content: space-between; /* Espacia el logo y el menú */
+    align-items: center; /* Centra verticalmente */
+    padding: 30px ; /* Espaciado interno */
+    height: 55px;
+}
+
+#nav img {
+    width: 250px; /* Ajusta el ancho de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+#nav ul {
+    display: flex; 
+    list-style-type: none; 
+    padding: 0;
+    margin: 0; 
+    background-color: #f8f9fa; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil debajo del navbar */
+    justify-content: center; /* Centra los elementos dentro del navbar */
+}
+
+#nav li {
+    margin: 0 20px; 
+    padding: 10px 0; 
+}
+
+#nav a {
+    text-decoration: none;
+    color: #262626; 
+    font-size: 16px; 
+    font-weight: 550; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    transition: all 0.3s ease; 
+}
+
+#nav ul a:hover {
+    color: #127D09;
+    transform: translateX(+2px); 
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    #nav ul {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    #nav li {
+        margin: 10px 0; 
+    }
+}
+
+
+
+/* Estilos del botón de WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px;  
+    background-color: transparent; 
+    border-radius: 100%;
+    padding: 6px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.whatsapp-button img {
+    width: 50px;
+    height: 50px;
+}
+
+.whatsapp-button:hover {
+    background-color: transparent; 
+    cursor: pointer;
+}
+
+
+
+/* Main General */
+
+/* Sección de presentación */
+.flayer_presentacion {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden; /* Evita que el contenido desborde */
+}
+
+/* Video dentro del flyer */
+.flayer_presentacion .background_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    z-index: 1;
+}
+
+
+/* Texto del contenido */
+.content_text {
+    position: relative;
+    z-index: 2;
+    top: 50%; /* Mantiene la burbuja superpuesta ligeramente */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Ajustar para que no ocupe todo el ancho */
+    color: #333; /* Color del texto */
+    background: rgba(255, 255, 255, 0.8); /* Fondo más claro y sutil */
+    padding: 25px; /* Espaciado más amplio */
+    border-radius: 8px; /* Bordes suavemente redondeados */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Borde delgado y elegante */
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    transition: all 0.3s ease; /* Transición suave para efectos visuales */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra ligera y elegante */
+    margin-top: -120px;
+    backdrop-filter: blur(5px); /* Efecto de desenfoque para darle un toque moderno */
+}
+
+/* Efecto al pasar el mouse */
+.content_text:hover {
+    background: rgba(255, 255, 255, 1); /* Fondo blanco sólido al pasar el mouse */
+}
+
+.content_text2 {
+    position: relative;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza el botón */
+    padding: 15px 30px; /* Tamaño del botón ajustado */
+    margin-top: 90px;
+    color: #262626; /* Color del texto del botón */
+    background-color: #ffffff; /* Fondo blanco para el botón */
+    border: none; 
+    border-radius: 25px; 
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    cursor: pointer; /* Manito al pasar por encima */
+    text-align: center;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    width: auto; /* El ancho se ajusta al contenido del texto */
+    display: inline-block; /* Hace que el botón sea más compacto */
+    text-decoration: none; 
+}
+
+.content_text2:hover {
+    background-color: #28a745;
+    color: #ffffff; 
+}
+
+/* Efecto de transformación de verde a rojo */
+.content_text2:active {
+    background-color: #ff3737;
+}
+
+
+
+/* Lineas entre flayer y quienes somos */
+.lineas_main {
+    position: relative;
+    height: 0;
+}
+
+.lineas_img {
+    position: absolute; 
+    top: -86px; 
+    left: 50%;
+    transform: translateX(-40%); /* Asegura que esté centrada */
+    width: auto;
+    z-index: 3;
+    pointer-events: none; /* Evita que la imagen interfiera con otros elementos */
+}
+
+
+/* Estilo para dispositivos pequeños */
+@media (max-width: 768px) {
+    .overlay_text {
+        font-size: 24px; 
+        padding: 10px 20px;
+    }
+}
+
+
+/* Clientes */
+
+.bubble_title {
+    position: relative; 
+    margin-top: -1px; 
+    background-color: #262626; 
+    border-radius: 0 0 20px 20px; 
+    width: calc(100% - 80px); 
+    max-width: 400px;
+    margin-left: 125px; 
+    margin-right: 20px;
+    height: 50px; 
+    display: flex; /* Usa flexbox para centrar el título */
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    z-index: 3; 
+}
+
+
+.overlay_text {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    position: relative;
+    z-index: 4;
+    text-shadow: 1px 1px 5px rgb(46, 45, 45);
+    text-transform: uppercase; 
+}
+
+
+.features_section {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+    justify-content: center; 
+    padding: 50px;
+    gap: 50px; /* Espacio entre las burbujas */
+    margin-bottom: 20px;
+}
+
+.features_section a {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.feature_item {
+    background-color: #ffffff; 
+    border-radius: 20px; 
+    padding: 20px; 
+    text-align: center; 
+    width: 300px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.feature_item:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); 
+}
+
+.feature_icon {
+    width: 200px; 
+    height: auto; 
+    max-height: 100px; 
+    background-color: #fff; 
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; 
+}
+
+.feature_item:hover .feature_icon {
+    transform: scale(1.2); 
+}
+
+
+p {
+    color: #666; 
+    font-size: 16px; 
+    line-height: 1.5; 
+    flex-grow: 1; 
+}
+
+/* Proveedores*/
+
+.proveedores {
+    text-align: center; 
+    padding: 20px; 
+    background-color: #e0dfdf; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.bubble-title {
+    position: relative; 
+    margin-top: -20px; 
+    background-color: #262626; 
+    border-radius: 0 0 20px 20px; 
+    width: calc(100% - 80px); 
+    max-width: 400px; 
+    margin-left: 105px; 
+    margin-right: 20px; 
+    margin-bottom: 50px;
+    height: 50px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    z-index: 3; 
+}
+
+
+.proveedores_text {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    position: relative;
+    z-index: 4;
+    text-shadow: 1px 1px 5px rgb(46, 45, 45);
+    text-transform: uppercase;
+}
+
+
+.proveedores img {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 5px; 
+    margin: 10px 0; 
+    transition: transform 0.3s ease; 
+}
+
+.proveedores img:hover {
+    transform: scale(1.1); 
+}
+
+.lineas_proveedores {
+    position: relative;
+    height: 0; 
+}
+
+.lineas_prove {
+    position: absolute; 
+    top: -85px; 
+    left: 50%; 
+    transform: translateX(-40%);
+    width: auto; 
+    z-index: 3; 
+    pointer-events: none; 
+}
+
+
+/* Footer */
+
+
+.lineas_footer {
+    position: relative; 
+    height: 0; 
+}
+
+.lineas_footer_img {
+    position: absolute; 
+    top: -85px; 
+    left: 50%; 
+    transform: translateX(-40%); 
+    width: auto; 
+    z-index: 3; 
+    pointer-events: none; 
+}
+
+
+
+
+.footer h3 {
+    font-size: 22px;
+    color: #ffffff; 
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    margin-left: 20px; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+}
+
+.footer p {
+    font-size: 18px; 
+    color: #d6d6d6; 
+    margin-bottom: 15px; 
+    margin-left: 20px; 
+    max-width: 50%;
+    text-align: left; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+
+/* Estilo para los enlaces dentro del footer */
+
+.footer {
+    position: relative; 
+    z-index: 1; /* Asegura que el contenido esté encima del video */
+    padding: 20px; /* Espaciado interno */
+    color: white; 
+}
+
+.video-background {
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: hidden; /* Oculta cualquier parte que se desborde */
+    z-index: 0; /* Envía el video al fondo */
+}
+
+.video-background video {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Cubre todo el espacio manteniendo la proporción */
+}
+
+.overlay {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(68, 68, 68, 0.5); /* Capa oscura para mejorar la visibilidad del texto */
+    z-index: 1; /* Asegura que esté encima del video */
+}
+
+.footer-content {
+    position: relative; 
+    z-index: 2; /* Asegura que el contenido esté encima */
+    padding: 20px; /* Agrega algo de espaciado interno */
+}
+
+.footer a {
+    text-decoration: none; 
+}
+
+.footer a.mail { 
+    color: #eb0404; 
+    transition: color 0.3s ease; 
+}
+
+.footer a.mail:hover { 
+    color: #f74c4c; 
+}
+
+/* Efecto hover para todos los enlaces */
+.footer a:hover {
+    color: #f74c4c; 
+}
+
+#formulario-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px; 
+    margin: 0 0 50px 0; 
+    padding: 30px; 
+    background-color: #f9f9f9;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+}
+
+#formulario-container label {
+    margin-bottom: 10px; 
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    color: #333;
+}
+
+#formulario-container input, 
+#formulario-container textarea {
+    padding: 12px;
+    margin-bottom: 20px; 
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+}
+
+#formulario-container input[type="number"],
+#formulario-container input[type="email"],
+#formulario-container input[type="text"] {
+    height: 45px; 
+}
+
+#formulario-container textarea {
+    resize: vertical; 
+    height: 120px; 
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    margin-top: 30px; 
+}
+
+.empresa-imagen {
+    max-width: 150px; 
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #127D09;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0a5806; 
+}
+
+
+
+.button-container {
+    display: flex;
+    align-items: center; 
+    margin-top: 10px; 
+}
+
+.empresa-imagen {
+    width: 140px; 
+    height: auto; 
+    margin-right: 10px; 
+}
+
+button {
+    background-color: #27ae60; 
+    color: white; 
+    padding: 12px 20px; 
+    font-family: 'Helvetica', sans-serif; 
+    font-size: 16px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; /* Cursor en forma de mano */
+    transition: background-color 0.3s ease; 
+    margin-left: auto; /* Empuja el botón hacia la derecha */
+    display: block; /* Asegura que el botón se comporte como un bloque */
+    width: fit-content; /* Ajusta el ancho del botón al contenido */
+}
+
+     /* Final */
+
+/* Estilos generales para la sección final */
+
+.lineas_final {
+    position: relative; 
+    height: 0; 
+}
+
+.lineas_final_img {
+    position: absolute; 
+    top: -86px;
+    left: 50%; 
+    transform: translateX(-40%); 
+    width: auto; 
+    z-index: 3; 
+    pointer-events: none; 
+}
+
+
+#footer {
+    background-color: rgba(255, 255, 255, 0.9); 
+    font-family: 'Poppins', sans-serif;
+    width: 100%; 
+    position: relative; 
+    left: 0; 
+    right: 0; 
+    margin: 0; 
+    padding: 0; 
+}
+
+
+
+#final {
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif; 
+    display: flex; 
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+}
+
+/* Estilos para la lista de enlaces */
+.lista_final ul {
+    list-style-type: none; /* Eliminar viñetas */
+    padding: 0; 
+    margin: 0px 60px;
+    flex: 1 1 200px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    justify-content: center; 
+    height: 100%; 
+}
+
+.lista_final li {
+    margin-bottom: 10px; /* Espaciado entre los elementos de la lista */
+}
+
+.lista_final a {
+    text-decoration: none; 
+    color: #34495e; 
+    font-weight: bold; 
+    font-size: 20px; 
+    transition: color 0.3s, transform 0.3s; 
+}
+
+.lista_final a:hover {
+    color: #3c5977;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+
+/* Estilos para redes sociales */
+#red_social {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin: 150px 0px; 
+    flex: 1 1 200px; 
+}
+
+#red_social p {
+    margin-bottom: 10px;
+    font-weight: bold; 
+    color: #34495e; 
+    font-size: 20px; 
+    text-align: center; 
+}
+
+.social-icons {
+    margin: 10px;
+    margin-left: 0px; 
+    display: flex; 
+    justify-content: flex-start; 
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 30px; 
+    margin-left: 15px;
+    transition: color 0.3s, transform 0.3s; 
+}
+
+.social-icons a:hover {
+    color: #27ae60; 
+    transform: scale(1.1); 
+}
+
+
+
+/* Estilos para la información de contacto */
+
+.logo_final {
+    width: 120px;
+    height: auto; 
+    margin-bottom: 10px; 
+    display: block; 
+    align-self: flex-start;
+}
+
+.contact_info {
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    flex: 1 1 200px; 
+    margin: 60px 20px; 
+    margin-left: 60px; 
+
+}
+
+.contact_info h1 {
+    margin: 0; 
+    color: #333; 
+    font-size: 20px; 
+    position: relative; 
+    transition: color 0.5s ease; 
+}
+
+.contact_info h1:hover {
+    color: #27ae60; 
+}
+
+.contact_info p,
+.contact_info a {
+    margin: 5px 0; 
+    color: #333; 
+    display: flex; 
+    align-items: center; 
+}
+
+.contact_info a {
+    margin-top: 15px;
+    text-decoration: none; 
+    color: #34495e; 
+    font-weight: bold; 
+    transition: color 0.3s; 
+}
+
+.contact_info a:hover {
+    color: #1e8449; /* Color al pasar el mouse */
+}
+
+.contact_info a i {
+    margin-right: 5px; /* Espaciado entre icono y texto */
+    color: #27ae60; 
+    transition: color 0.3s; /* Transición suave para el color del icono */
+}
+
+.contact_info a:hover i {
+    color: #1e8449; /* Color del icono al pasar el mouse */
+}
+
+/* Estilos para el mapa */
+.mapa_final iframe {
+    display: flex;
+    width: 350px;
+    height: 250px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    margin: 40px 60px;
+}
+
+.mapa_final iframe:hover {
+    transform: scale(1.05); /* Agranda ligeramente al pasar el cursor */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); 
+}
+
+/* Estilos para el pie de página */
+.article {
+    text-align: center;
+    color: #000000; 
+    width: 100%; 
+    position: relative; 
+    bottom: 0; 
+}

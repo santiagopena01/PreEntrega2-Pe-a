@@ -1,0 +1,728 @@
+                                          /* Header General */
+
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
+    background-color: #f0f0f0; 
+}
+
+header {
+    background-color: #ffffff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    padding: 10px 20px; 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10; 
+
+}
+
+
+#nav {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 30px ; 
+    height: 55px;
+}
+
+#nav img {
+    width: 250px; 
+    height: auto; 
+}
+
+#nav ul {
+    display: flex; 
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
+    background-color: #f8f9fa; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    justify-content: center; 
+}
+
+#nav li {
+    margin: 0 20px; 
+    padding: 10px 0; 
+}
+
+#nav a {
+    text-decoration: none;
+    color: #262626; 
+    font-size: 16px; 
+    font-weight: 550; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    transition: all 0.3s ease; 
+}
+
+#nav ul a:hover {
+    color: #127D09; 
+    transform: translateX(+2px); 
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    #nav ul {
+        flex-direction: column; /* En pantallas pequeñas, los elementos se apilan en columna */
+        align-items: center; 
+    }
+
+    #nav li {
+        margin: 10px 0; 
+    }
+}
+
+
+
+/* Estilos del botón de WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px;  
+    background-color: transparent; 
+    border-radius: 100%;
+    padding: 6px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.whatsapp-button img {
+    width: 50px;
+    height: 50px;
+}
+
+.whatsapp-button:hover {
+    background-color: transparent; 
+    cursor: pointer;
+}
+
+
+
+/* Main General */
+
+
+
+.flayer_presentacion {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden; /* Evita que el contenido desborde */
+}
+
+.flayer_presentacion .background_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* El video ocupa toda la ventana */
+    object-fit: cover;
+    z-index: 1;
+}
+
+
+/* Contenedor de columnas interactivas */
+.interactive-columns {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    z-index: 2;
+}
+
+/* Cajas interactivas */
+.interactive-box {
+    margin: 20px; /* Aumentar margen lateral */
+    padding: 45px;
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el fondo y la sombra */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+    cursor: pointer;
+}
+
+.interactive-box:hover {
+    background-color: #ffffff; 
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Sombra más notable */
+}
+
+
+.interactive-box h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px; 
+    color: #333; 
+    margin-bottom: 10px; /* Espaciado inferior */
+    text-transform: uppercase; 
+    font-weight: bold; 
+}
+
+.interactive-box p {
+    font-family: 'Poppins', sans-serif;
+    color: #262626;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.highlight {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/* Lineas entre flayer y quienes somos */
+.lineas_main {
+    position: relative; 
+    height: 0; 
+    margin-bottom: 20px;
+}
+
+.lineas_img {
+    position: absolute;
+    top: -86px; 
+    left: 50%; 
+    transform: translateX(-40%); 
+    width: auto; 
+    z-index: 3; 
+    pointer-events: none; 
+}
+
+
+/* Estilo para dispositivos pequeños */
+@media (max-width: 768px) {
+    .overlay_text {
+        font-size: 24px; 
+        padding: 10px 20px;
+    }
+}
+
+
+.bubble-title {
+    position: relative; 
+    margin-top: -20px; 
+    background-color: rgba(255, 255, 255, 0.4); 
+    border-radius: 0 0 20px 20px; 
+    width: calc(100% - 100px); 
+    max-width: 500px; 
+    margin-left: 95px; 
+    margin-right: 20px; 
+    height: 80px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    z-index: 3; /* Asegura que esté por encima del fondo */
+}
+
+
+.overlay_text {
+    text-align: center;
+    color: #313131;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    position: relative;
+    z-index: 4;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+}
+
+/* Estilo general para las secciones de servicios */
+.proteccion_seguridad,
+.diseño_sistemas,
+.instalacion_sistemas,
+.monitoreo,
+.auditoria {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de las burbujas */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0;
+}
+
+/* Estilo de las burbujas (video y texto) */
+.video-bubble,
+.text-bubble {
+    flex: 1;
+    margin: 15px; 
+    border-radius: 50px; 
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #262626;
+    font-family: 'Poppins', sans-serif;
+    transition: box-shadow 0.3s ease; 
+}
+
+/* Video responsivo con forma de burbuja */
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+/* Efecto visual para los videos */
+.video-bubble {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+}
+
+.video-bubble:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8); 
+}
+
+/* Estilo interactivo para la burbuja del texto */
+.text-bubble {
+    padding: 20px;
+    text-align: justify;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-bubble:hover {
+    transform: scale(1.05); /* Escala el texto al pasar el ratón */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9); /* Añade una sombra intensa */
+}
+
+/* Estilo del título (h3) */
+.text-bubble h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Separación entre el video y el texto */
+.video-bubble {
+    margin-right: 20px; 
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .video-bubble,
+    .text-bubble {
+        width: 100%;
+        margin: 10px 0; 
+    }
+}
+
+
+
+.lineas_footer {
+    position: relative; 
+    height: 0; 
+}
+
+.lineas_footer_img {
+    position: absolute; 
+    top: -85px; 
+    left: 50%; 
+    transform: translateX(-40%); 
+    width: auto; 
+    z-index: 3; /* Asegura que esté por encima de las demás secciones */
+    pointer-events: none; /* Evita que la imagen interfiera con otros elementos */
+}
+
+
+
+
+.footer h3 {
+    font-size: 22px; 
+    color: #ffffff;
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    margin-left: 20px; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+}
+
+.footer p {
+    font-size: 18px; 
+    color: #d6d6d6; 
+    margin-bottom: 15px; 
+    margin-left: 20px; 
+    max-width: 50%; 
+    text-align: left; /* Alineación del texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra del texto */
+}
+
+
+/* Estilo para los enlaces dentro del footer */
+
+.footer {
+    position: relative; 
+    z-index: 1; /* Asegura que el contenido esté encima del video */
+    padding: 20px; /* Espaciado interno */
+    color: white; 
+}
+
+.video-background {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: hidden; /* Oculta cualquier parte que se desborde */
+    z-index: 0; /* Envía el video al fondo */
+}
+
+.video-background video {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Cubre todo el espacio manteniendo la proporción */
+}
+
+.overlay {
+    position: absolute; /* Capa sobre el video */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(68, 68, 68, 0.5); /* Capa oscura para mejorar la visibilidad del texto */
+    z-index: 1; /* Asegura que esté encima del video */
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté encima */
+    padding: 20px; 
+}
+
+.footer a {
+    text-decoration: none; 
+}
+
+.footer a.mail { 
+    color: #eb0404; 
+    transition: color 0.3s ease; 
+}
+
+.footer a.mail:hover { 
+    color: #f74c4c; 
+}
+
+/* Efecto hover para todos los enlaces */
+.footer a:hover {
+    color: #f74c4c; 
+}
+
+#formulario-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px; 
+    margin: 0 0 50px 0; 
+    padding: 30px; 
+    background-color: #f9f9f9;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+}
+
+#formulario-container label {
+    margin-bottom: 10px; 
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    color: #333;
+}
+
+#formulario-container input, 
+#formulario-container textarea {
+    padding: 12px;
+    margin-bottom: 20px; 
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+}
+
+#formulario-container input[type="number"],
+#formulario-container input[type="email"],
+#formulario-container input[type="text"] {
+    height: 45px; 
+}
+
+#formulario-container textarea {
+    resize: vertical; 
+    height: 120px; 
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    margin-top: 30px; 
+}
+
+.empresa-imagen {
+    max-width: 150px; 
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #127D09;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0a5806; 
+}
+
+
+
+.button-container {
+    display: flex; 
+    align-items: center; 
+    margin-top: 10px; 
+}
+
+.empresa-imagen {
+    width: 140px; 
+    height: auto;
+    margin-right: 10px;
+}
+
+button {
+    background-color: #27ae60; 
+    color: white;
+    padding: 12px 20px; 
+    font-family: 'Helvetica', sans-serif; 
+    font-size: 16px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    margin-left: auto; 
+    display: block; 
+    width: fit-content; 
+}
+
+     /* Final */
+
+/* Estilos generales para la sección final */
+
+.lineas_final {
+    position: relative; 
+    height: 0; /* No ocupa espacio visual */
+}
+
+.lineas_final_img {
+    position: absolute; 
+    top: -86px; 
+    left: 50%; 
+    transform: translateX(-40%); /* Asegura que esté centrada */
+    width: auto; /* Ajusta el tamaño de la imagen si es necesario */
+    z-index: 3; /* Asegura que esté por encima de las demás secciones */
+    pointer-events: none; /* Evita que la imagen interfiera con otros elementos */
+}
+
+
+#footer {
+    background-color: rgba(255, 255, 255, 0.9); 
+    font-family: 'Poppins', sans-serif;
+    width: 100%; 
+    position: relative; 
+    left: 0;
+    right: 0; 
+    margin: 0; 
+    padding: 0; 
+}
+
+
+
+#final {
+    background-color: #ffffff; 
+    font-family: 'Arial', sans-serif; 
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+/* Estilos para la lista de enlaces */
+.lista_final ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0px 60px;
+    flex: 1 1 200px; 
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: center; 
+    height: 100%; 
+}
+
+.lista_final li {
+    margin-bottom: 10px; 
+}
+
+.lista_final a {
+    text-decoration: none; 
+    color: #34495e; 
+    font-weight: bold; 
+    font-size: 20px; 
+    transition: color 0.3s, transform 0.3s; 
+}
+
+.lista_final a:hover {
+    color: #3c5977;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+
+/* Estilos para redes sociales */
+#red_social {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin: 100px 0px; 
+    flex: 1 1 200px; 
+}
+
+#red_social p {
+    margin-bottom: 10px; 
+    font-weight: bold; 
+    color: #34495e; 
+    font-size: 20px; 
+    text-align: center; 
+}
+
+.social-icons {
+    margin: 10px;
+    margin-left: 0px; 
+    display: flex; 
+    justify-content: flex-start; 
+}
+
+.social-icons a {
+    color: #333; 
+    font-size: 30px; 
+    margin-left: 15px; 
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #27ae60;
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+
+
+/* Estilos para la información de contacto */
+
+.logo_final {
+    width: 120px; 
+    height: auto; 
+    margin-bottom: 10px; /* Espacio debajo de la imagen */
+    display: block; 
+    align-self: flex-start; /* Alinea la imagen al inicio del contenedor */
+}
+
+.contact_info {
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    flex: 1 1 200px; 
+    margin: 60px 20px; 
+    margin-left: 60px; 
+
+}
+
+.contact_info h1 {
+    margin: 0; 
+    color: #333; 
+    font-size: 20px; 
+    position: relative; 
+    transition: color 0.5s ease; 
+}
+
+.contact_info h1:hover {
+    color: #27ae60; 
+}
+
+.contact_info p,
+.contact_info a {
+    margin: 5px 0; 
+    color: #333; 
+    display: flex; 
+    align-items: center; 
+}
+
+.contact_info a {
+    margin-top: 15px;
+    text-decoration: none; 
+    color: #34495e; 
+    font-weight: bold; 
+    transition: color 0.3s; 
+}
+
+.contact_info a:hover {
+    color: #1e8449; 
+}
+
+.contact_info a i {
+    margin-right: 5px; 
+    color: #27ae60; 
+    transition: color 0.3s;
+}
+
+.contact_info a:hover i {
+    color: #1e8449; 
+}
+
+/* Estilos para el mapa */
+.mapa_final iframe {
+    display: flex;
+    width: 350px;
+    height: 250px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    margin: 40px 60px;
+}
+
+.mapa_final iframe:hover {
+    transform: scale(1.05); 
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); 
+}
+
+/* Estilos para el pie de página */
+.article {
+    text-align: center; 
+    color: #000000; 
+    width: 100%; 
+    position: relative; 
+    bottom: 0; 
+}
